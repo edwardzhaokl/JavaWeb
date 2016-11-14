@@ -25,7 +25,15 @@
     <servlet-name>ServletDemo02</servlet-name>
     <url-pattern>/ServletDemo02</url-pattern>
   </servlet-mapping>
-  
+
+  <servlet>
+    <servlet-name>ServletDemo03</servlet-name>
+    <servlet-class>zhaokl.http.servlet.ServletDemo03</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletDemo03</servlet-name>
+    <url-pattern>/ServletDemo03</url-pattern>
+  </servlet-mapping>
   
   
 </web-app>
