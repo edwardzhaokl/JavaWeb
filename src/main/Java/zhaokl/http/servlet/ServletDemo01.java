@@ -17,7 +17,7 @@ public class ServletDemo01 extends HttpServlet{
 
 		response.setStatus(302);
 
-		response.setHeader("Location", "/JavaWeb_HttpProtocol/ServletDemo01.jsp");
+		response.setHeader("Location", "/HttpProtocol/ServletDemo01.jsp");
 
 	}
 

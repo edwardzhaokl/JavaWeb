@@ -9,7 +9,7 @@ import java.io.*;
  * <p>
  * created at: 08/11/2016 11:19
  * <p>
- * desc: 设置Location响应头, 实现请求重定向
+ * desc: 设置content-type响应头，指定回送数据类型
  */
 public class ServletDemo03 extends HttpServlet{
 
