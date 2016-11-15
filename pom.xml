@@ -1,12 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.zhao.kl</groupId>
-  <artifactId>myWeb1108</artifactId>
+  <groupId>zhaokl.http.servlet</groupId>
+  <artifactId>JavaWeb</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>myWeb1108 Maven Webapp</name>
+
+  <name>JavaWeb Maven WebApp</name>
   <url>http://maven.apache.org</url>
+
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -20,7 +24,49 @@
       <version>3.1.0</version>
     </dependency>
   </dependencies>
+
+
   <build>
-    <finalName>myWeb1108</finalName>
+    <finalName>JavaWeb</finalName>
+    <pluginManagement>
+      <plugins>
+
+        <!--<plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>2.2</version>
+          <configuration>
+            <port>8080</port>
+            <path>/{project.build.finalName}</path>
+            <uriEncoding>UTF-8</uriEncoding>
+            <server>tomcat7</server>
+          </configuration>
+        </plugin>-->
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <testFailureIgnore>true</testFailureIgnore>
+            <argLine>-Xmx128M</argLine>
+            <includes>
+              <include>**/*Test.java</include>
+            </includes>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
+  <profiles>
+
+    <profile>
+      <id>doclint-java8-disable</id>
+      <activation>
+        <jdk>[1.8,)</jdk>
+      </activation>
+      <properties>
+        <javadoc.opts>-Xdoclint:none</javadoc.opts>
+      </properties>
+    </profile>
+  </profiles>
 </project>

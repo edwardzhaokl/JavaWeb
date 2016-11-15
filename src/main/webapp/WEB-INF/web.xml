@@ -34,6 +34,56 @@
     <servlet-name>ServletDemo03</servlet-name>
     <url-pattern>/ServletDemo03</url-pattern>
   </servlet-mapping>
-  
-  
+
+  <servlet>
+    <servlet-name>ServletDemo04</servlet-name>
+    <servlet-class>zhaokl.http.servlet.ServletDemo04</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletDemo04</servlet-name>
+    <url-pattern>/ServletDemo04</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>ServletDemo05</servlet-name>
+    <servlet-class>zhaokl.http.servlet.ServletDemo05</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletDemo05</servlet-name>
+    <url-pattern>/ServletDemo05</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ServletConfigDemo01</servlet-name>
+    <servlet-class>zhaokl.servlet.config.ServletConfigDemo01</servlet-class>
+    <init-param>
+      <param-name>name</param-name>
+      <param-value>zhaokl</param-value>
+    </init-param>
+    <init-param>
+      <param-name>passward</param-name>
+      <param-value>123</param-value>
+    </init-param>
+    <init-param>
+      <param-name>charset</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletConfigDemo01</servlet-name>
+    <url-pattern>/ServletConfigDemo01</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ServletContextDemo01</servlet-name>
+    <servlet-class>zhaokl.servlet.context.ServletContextDemo01</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletContextDemo01</servlet-name>
+    <url-pattern>/ServletContextDemo01</url-pattern>
+  </servlet-mapping>
+
+
+
 </web-app>

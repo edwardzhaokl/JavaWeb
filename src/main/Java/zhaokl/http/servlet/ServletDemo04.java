@@ -11,23 +11,15 @@ import java.io.*;
  * <p>
  * desc: 设置content-type响应头，指定回送数据类型
  */
-public class ServletDemo03 extends HttpServlet{
+public class ServletDemo04 extends HttpServlet{
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
-		response.setHeader("content-type", "image/jpeg");
+		response.setHeader("refresh", "3");
 
-		InputStream inputStream = this.getServletContext().getResourceAsStream("/img/JackMa.jpeg");
+		//response.setHeader("refresh", "3; url = 'http://www.baidu.com'");
 
-		byte[] buffer = new byte[10240];
-		int length;
-
-		OutputStream outputStream = response.getOutputStream();
-		while ((length = inputStream.read(buffer)) > 0 ) {
-			outputStream.write(buffer, 0, length);
-			System.out.println(length);
-		}
-
+		response.getWriter().write("ServletDemo4");
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{

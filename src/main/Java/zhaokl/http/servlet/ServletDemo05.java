@@ -11,21 +11,20 @@ import java.io.*;
  * <p>
  * desc: 设置content-type响应头，指定回送数据类型
  */
-public class ServletDemo03 extends HttpServlet{
+public class ServletDemo05 extends HttpServlet{
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
-		response.setHeader("content-type", "image/jpeg");
+		response.setHeader("content-disposition", "attachment;filename = xxx.jpg");
 
 		InputStream inputStream = this.getServletContext().getResourceAsStream("/img/JackMa.jpeg");
 
-		byte[] buffer = new byte[10240];
-		int length;
-
+		byte[] buffer = new byte[1024];
+		int length = 0;
 		OutputStream outputStream = response.getOutputStream();
-		while ((length = inputStream.read(buffer)) > 0 ) {
+
+		while ((length = inputStream.read(buffer)) > 0) {
 			outputStream.write(buffer, 0, length);
-			System.out.println(length);
 		}
 
 	}
